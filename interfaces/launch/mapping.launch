@@ -1,0 +1,12 @@
+<launch>
+  
+  <!-- Start the Gazebo Environment -->
+  <include file="$(find simulation_environment)/launch/diff_drive.launch" />
+  
+  <!-- Start the mapping -->
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" />
+  
+  <!-- Start teleop to control -->
+  <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+
+</launch>
