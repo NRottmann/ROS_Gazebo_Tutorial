@@ -13,9 +13,19 @@ sudo apt-get install ros-kinetic-teleop-twist-keyboard
 ```
 
 ## How to:
-* Start by downloading the git repository
+* Start by creating a catkin workspace folder, downloading the git repository and compiling the code
 ```bash
-git clone 
+mkdir -p ~/tutorial_ws/src
+cd ~/tutorial_ws/src 
+git clone https://github.com/NRottmann/ROS_Gazebo_Tutorial.git
+cd  ..
+catkin_make
+```
+* Start the simulation
+```bash
+cd ~/tutorial_ws
+source devel/setup.bash
+roslaunch interfaces mapping.launch
 ```
 
 
