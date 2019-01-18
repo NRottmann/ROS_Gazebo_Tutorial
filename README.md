@@ -27,5 +27,11 @@ cd ~/tutorial_ws
 source devel/setup.bash
 roslaunch interfaces mapping.launch
 ```
-
+* The Gazebo environment should have opened and something similar to the image below should have appeared:
+![alt text](https://github.com/NRottmann/ROS_Gazebo_Tutorial/tree/master/images/GazeboEnvironment.png)
+* The mapping result can be seen using rviz
+```bash
+rviz
+```
+![alt text](https://github.com/NRottmann/ROS_Gazebo_Tutorial/tree/master/images/OccupancyGrid.png)
 
