@@ -33,6 +33,5 @@ roslaunch interfaces mapping.launch
 ```bash
 rviz
 ```
-
-[![Image of RVIZ](https://github.com/NRottmann/ROS_Gazebo_Tutorial/tree/master/images/OccupancyGrid.png)](https://github.com/NRottmann/ROS_Gazebo_Tutorial)
+![Image of RVIZ](images/OccupancyGrid.png "RVIZ")
 
