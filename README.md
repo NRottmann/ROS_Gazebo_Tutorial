@@ -9,7 +9,7 @@ Up to the current state it cna be used by steering the robot in an apartment env
 * Additional ROS packages to install:
 ```bash
 sudo apt-get install ros-kinetic-gmapping
-sudo apt-get install ros-kinetic-teleop-twist-keyboard
+sudo apt-get install ros-kinetic-move-base
 ```
 
 ## How to:

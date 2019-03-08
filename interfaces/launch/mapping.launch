@@ -7,6 +7,19 @@
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" />
   
   <!-- Start teleop to control -->
-  <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" />
+  <!-- <node pkg="teleop_twist_keyboard" name="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" /> -->
+  
+  <!-- Start the navigation package move base, which steers the robot to a goal state defined by the path planner -->
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+        <param name="controller_frequency" value="10.0"/>
+        <rosparam file="$(find interfaces)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find interfaces)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find interfaces)/config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find interfaces)/config/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find interfaces)/config/trajectory_planner.yaml" command="load" />
+  </node>
+  
+  <!-- Start the path planning -->
+  <node pkg="interfaces" type="path_planner" name="path_planner" />
 
 </launch>

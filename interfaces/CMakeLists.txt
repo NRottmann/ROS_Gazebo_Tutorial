@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   serial
   std_msgs
   geometry_msgs
+  nav_msgs
   message_generation
 )
 
@@ -23,6 +24,7 @@ generate_messages(
   DEPENDENCIES
   std_msgs
   geometry_msgs
+  nav_msgs
 )
 
 ## Declare a catkin package
@@ -31,6 +33,7 @@ catkin_package(
     serial
     std_msgs
     geometry_msgs
+    nav_msgs
     message_runtime
 )
 
@@ -38,3 +41,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
   ${src}
 )
+
+add_executable(path_planner src/path_planner.cpp)
+target_link_libraries(path_planner ${catkin_LIBRARIES})
+add_dependencies(path_planner ${catkin_EXPORTED_TARGETS})
