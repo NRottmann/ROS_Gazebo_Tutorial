@@ -3,18 +3,20 @@
   <xacro:include filename="$(find simulation_environment)/models/diff_drive/parameter.xacro" />
   
   <!-- Self designed Odometry plugin to get messages from ROS and publish messages and control the motors of the wheels -->
-  <!--<gazebo>
+  <gazebo>
 	  <plugin name="odometry_plugin" filename="libodometry_plugin.so">
 		<leftJoint>left_wheel_hinge</leftJoint>
 		<rightJoint>right_wheel_hinge</rightJoint>
 		<torque>${torque_wheel}</torque>
 		<diameter>${r_wheel*2}</diameter>
 		<axisDistance>${L_wheel}</axisDistance>
+		<updateRate>0.05</updateRate>
+		<noise>0.1</noise>
 	  </plugin>
-  </gazebo> -->
+  </gazebo>
   
   <!-- Differential Drive controller from Gazebo -->
-  <gazebo>
+  <!-- <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
@@ -29,7 +31,7 @@
       <robotBaseFrame>base_link</robotBaseFrame>
       <legacyMode>false</legacyMode>
     </plugin>
-  </gazebo>
+  </gazebo> -->
   
   <!-- IMU Plugin -->
   <gazebo>
@@ -38,13 +40,13 @@
       <bodyName>base_link</bodyName>
       <topicName>imu</topicName>
       <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.0</gaussianNoise>
+      <gaussianNoise>0.5</gaussianNoise>
       <updateRate>20.0</updateRate>
     </plugin>
   </gazebo>
   
   <!-- Hukuyo Laser Plugin -->
-  <gazebo reference="laser">
+  <!-- <gazebo reference="laser">
     <sensor type="ray" name="head_hokuyo_sensor"> 
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
@@ -74,7 +76,7 @@
         <frameName>/laser</frameName>
       </plugin>
     </sensor>
-  </gazebo>
+  </gazebo> -->
   
   <!-- Paint the robot -->
   <gazebo reference="base_link">

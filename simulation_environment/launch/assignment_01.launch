@@ -11,7 +11,7 @@
   
   <!-- Load the world environment -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" 		value="$(find simulation_environment)/worlds/diff_drive.world"/>
+    <arg name="world_name" 		value="$(find simulation_environment)/worlds/assignment.world"/>
     <arg name="paused" 			value="$(arg paused)"/>
     <arg name="use_sim_time" 	value="$(arg use_sim_time)"/>
     <arg name="gui" 			value="$(arg gui)"/>
@@ -30,5 +30,5 @@
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
     <remap from="robot_description" to="diff_drive_description" />
   </node>
-
+  
 </launch>
