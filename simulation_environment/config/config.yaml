@@ -1,0 +1,15 @@
+# Robot specs
+wheel_radius: 0.1075      # diameter of a wheel, in m (float)
+axis_distance: 0.1788     # half of the wheelbase, in m (float)
+v0: 1.0                   # maximum linear and angular velocity
+w0: 1.0
+
+# Controller specs
+Pv: 1                     # Proportional control value for the velocity
+Pw: 1
+Dv: 1                     # Derivative control value for the velocity
+Dw: 1
+
+# Odometry specs
+noise_vel: 0.1            # noise for velocity and odometry
+noise_odom: 0.1

@@ -31,4 +31,14 @@
     <remap from="robot_description" to="diff_drive_description" />
   </node>
   
+  <!-- Activate the kalman Filter -->
+  <node pkg="localization" name="kalman_filter" type="kalman_filter">
+    <rosparam command="load" file="$(find simulation_environment)/config/config.yaml"/>
+  </node>
+  
+  <!-- Activate the controller -->
+  <node pkg="control" name="pdControl" type="pdControl">
+    <rosparam command="load" file="$(find simulation_environment)/config/config.yaml"/>
+  </node>
+  
 </launch>

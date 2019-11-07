@@ -20,12 +20,12 @@
     </include> 
 	  
     <!-- Set up the solver used for simulation -->  
-    <physics name="ode_70iters" type="ode">
+    <physics name="ode_200iters" type="ode">
       <real_time_update_rate>1500</real_time_update_rate>
       <ode>
         <solver>
           <type>quick</type>
-          <iters>70</iters>
+          <iters>200</iters>
         </solver>
       </ode>
     </physics>

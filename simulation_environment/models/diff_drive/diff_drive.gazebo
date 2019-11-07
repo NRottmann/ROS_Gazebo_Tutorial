@@ -11,7 +11,8 @@
 		<diameter>${r_wheel*2}</diameter>
 		<axisDistance>${L_wheel}</axisDistance>
 		<updateRate>0.05</updateRate>
-		<noise>0.1</noise>
+		<noiseOdom>${noise_odom}</noiseOdom>
+		<noiseVel>${noise_vel}</noiseVel>
 	  </plugin>
   </gazebo>
   

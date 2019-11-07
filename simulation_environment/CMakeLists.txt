@@ -9,19 +9,6 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   sensor_msgs
   nav_msgs
-  message_generation
-)
-
-add_message_files(
-  FILES
-  Odometry.msg
-)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-  geometry_msgs
-  nav_msgs
 )
 
 # Depending on system install of Gazebo
@@ -35,7 +22,6 @@ catkin_package(
    geometry_msgs 
    sensor_msgs 
    nav_msgs
-   message_runtime
 )
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
