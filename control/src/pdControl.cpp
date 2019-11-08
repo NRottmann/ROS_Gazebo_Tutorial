@@ -50,13 +50,13 @@ void PDListener::callback(const nav_msgs::Odometry::ConstPtr& msg_in)
 	nav_msgs::Odometry msg_pose = *msg_in;
 	
 	// Positions to visit
-	float xT[4] = { 0.0, 2.0, 2.0, 0.0 };
-	float yT[4] = { 0.0, 0.0, 2.0, 2.0 };
+	float xT[20] = { 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0,  6.0,  5.0,  4.0,  3.0,  3.0,  4.0,  4.0,  3.0,  2.0,  1.0,  0.0, -1.0, -1.0};
+	float yT[20] = { 0.0, 0.0, 1.0, 1.0, 2.0, 1.0, 0.0, -1.0, -2.0, -1.0, -2.0, -3.0, -4.0, -5.0, -6.0, -5.0, -4.0, -3.0, -2.0, -1.0};
 
 	// Check whether we are already near enough the desired position
 	float ds = (xT[pos] - msg_pose.pose.pose.position.x)*(xT[pos] - msg_pose.pose.pose.position.x) + (yT[pos] - msg_pose.pose.pose.position.y)*(yT[pos] - msg_pose.pose.pose.position.y);
-	if (ds < 0.5) {
-		if (pos == 3) {
+	if (ds < 0.3) {
+		if (pos == 19) {
 			pos = 0;
 		}
 		else {

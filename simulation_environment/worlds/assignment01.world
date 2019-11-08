@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <!-- We use a custom world for the robot so that the camera angle is launched correctly -->
+  <world name="diff_drive_world">
+    
+    <!-- Add a ground plane -->
+    <include>
+        <uri>model://ground_plane</uri>
+        <material>
+            <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+        </material>
+    </include>
+    
+    <!-- Global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include> 
+    
+    <!-- Waypoints (visual) -->
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>1 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>2 1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>3 1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>4 2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>5 1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>6 0 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>6 -1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>5 -2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>4 -1 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>3 -2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>3 -3 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>4 -4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>4 -5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>3 -6 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>2 -5 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>1 -4 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>0 -3 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>-1 -2 0 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://waypoint</uri>
+      <pose>-1 -1 0 0 0 0</pose>
+    </include>   
+	  
+    <!-- Set up the solver used for simulation -->  
+    <physics name="ode_200iters" type="ode">
+      <real_time_update_rate>1500</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>200</iters>
+        </solver>
+      </ode>
+    </physics>
+
+  </world>
+</sdf>
