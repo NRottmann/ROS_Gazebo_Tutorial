@@ -12,17 +12,20 @@ find_package(catkin REQUIRED COMPONENTS
 
 catkin_package(
    CATKIN_DEPENDS 
-   roscpp 
-   rospy 
-   std_msgs 
-   geometry_msgs 
-   sensor_msgs 
-   nav_msgs
+     roscpp 
+     rospy 
+     std_msgs 
+     geometry_msgs 
+     sensor_msgs 
+     nav_msgs
+   DEPENDS
+     EIGEN3
 )
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${src}
+  ${EIGEN3_INCLUDE_DIR}
 )
 
 
