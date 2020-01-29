@@ -56,6 +56,27 @@
       </geometry>
     </visual>
   </link>
+  
+  <!-- Add an odom link -->
+  <link name="odom_link" >
+	<collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+		<box size="1e-6 1e-6 1e-6"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  <joint name="odom_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="${-x_chassis/4} 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="odom_link"/>
+  </joint>
 
   <!-- Add the wheels for the robot -->
   <link name="left_wheel">
@@ -122,17 +143,17 @@
 
   <!-- Set joints for the wheels which can be controlled over ROS -->
   <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="${-x_chassis/4} ${y_chassis/2+h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
+    <origin xyz="0 ${y_chassis/2+h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
     <child link="left_wheel"/>
-    <parent link="base_link"/>
+    <parent link="odom_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>
   </joint>
   <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="${-x_chassis/4} ${-y_chassis/2-h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
+    <origin xyz="0 ${-y_chassis/2-h_wheel/2} ${r_wheel/2-z_chassis/2}" rpy="0 0 0"/>
     <child link="right_wheel"/>
-    <parent link="base_link"/>
+    <parent link="odom_link"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="100" velocity="100"/>
     <joint_properties damping="0.0" friction="0.0"/>

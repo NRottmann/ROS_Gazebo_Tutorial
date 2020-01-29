@@ -35,16 +35,37 @@
   </gazebo> -->
   
   <!-- IMU Plugin -->
-  <gazebo>
+  <!-- <gazebo>
     <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
       <alwaysOn>true</alwaysOn>
-      <bodyName>base_link</bodyName>
+      <bodyName>odom_link</bodyName>
       <topicName>imu</topicName>
       <serviceName>imu_service</serviceName>
       <gaussianNoise>0.5</gaussianNoise>
       <updateRate>20.0</updateRate>
     </plugin>
+  </gazebo> -->
+  
+  <gazebo reference="odom_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>odom_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>odom_link</frameName>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
   </gazebo>
+
   
   <!-- Hukuyo Laser Plugin -->
   <!-- <gazebo reference="laser">
