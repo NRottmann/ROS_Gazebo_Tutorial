@@ -7,6 +7,7 @@ This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a si
 ## Requirements
 * ROS (recommended: Kinetic), Installation Instructions under http://wiki.ros.org/kinetic/Installation/Ubuntu
 * Gazebo (recommended: Version 7.0), comes with the ROS full version, otherwise http://gazebosim.org/tutorials?tut=install_ubuntu&ver=7.0
+* (optional) ROS-QTC-Plugin for using QT Creator as IDE (https://ros-qtc-plugin.readthedocs.io/en/latest/_source/Improve-ROS-Qt-Creator-Plugin-Developers-ONLY.html)
 
 ## How to:
 * Start by creating a catkin workspace folder, downloading the git repository and compiling the code
