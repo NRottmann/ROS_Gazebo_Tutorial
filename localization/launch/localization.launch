@@ -1,0 +1,22 @@
+<launch>
+
+  <include file="$(find simulation_environment)/launch/apartment.launch"/>
+
+  <arg name="map_file" default="$(find localization)/maps/mymap.yaml"/>
+
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
+
+  <node pkg="amcl" name="amcl" type="amcl" output="screen">
+        <!--<remap from="scan"        to="scan"/>-->
+          
+        <param name="min_particles"     value="50"/>
+        <param name="max_particles"     value="500"/>
+
+        <param name="global_frame_id"   value="/map"/>
+        <param name="base_frame_id"     value="/base_link"/>
+        <param name="odom_frame_id"     value="/odom_link"/>
+
+        <param name="use_map_topic"     value="true"/>
+  </node>
+
+</launch>

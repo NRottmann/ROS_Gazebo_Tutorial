@@ -2,22 +2,9 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find simulation_environment)/models/diff_drive/parameter.xacro" />
   
-  <!-- Self designed Odometry plugin to get messages from ROS and publish messages and control the motors of the wheels -->
+  <!-- TODO: Add same update rates over parameter setting and define all parameters in config -->
+  <!-- Differential Drive controller from Gazebo, TODO: Add noise by adapting the plugin -->
   <gazebo>
-	  <plugin name="odometry_plugin" filename="libodometry_plugin.so">
-		<leftJoint>left_wheel_hinge</leftJoint>
-		<rightJoint>right_wheel_hinge</rightJoint>
-		<torque>${torque_wheel}</torque>
-		<diameter>${r_wheel*2}</diameter>
-		<axisDistance>${L_wheel}</axisDistance>
-		<updateRate>0.05</updateRate>
-		<noiseOdom>${noise_odom}</noiseOdom>
-		<noiseVel>${noise_vel}</noiseVel>
-	  </plugin>
-  </gazebo>
-  
-  <!-- Differential Drive controller from Gazebo -->
-  <!-- <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <alwaysOn>true</alwaysOn>
       <updateRate>20</updateRate>
@@ -28,51 +15,30 @@
       <torque>20</torque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
+      <odometryFrame>odom_link</odometryFrame>
       <robotBaseFrame>base_link</robotBaseFrame>
       <legacyMode>false</legacyMode>
     </plugin>
-  </gazebo> -->
+  </gazebo>
   
   <!-- IMU Plugin -->
-  <!-- <gazebo>
+  <gazebo>
     <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
       <alwaysOn>true</alwaysOn>
-      <bodyName>odom_link</bodyName>
+      <bodyName>base_link</bodyName>
       <topicName>imu</topicName>
       <serviceName>imu_service</serviceName>
-      <gaussianNoise>0.5</gaussianNoise>
+      <gaussianNoise>0.1</gaussianNoise>
       <updateRate>20.0</updateRate>
     </plugin>
-  </gazebo> -->
-  
-  <gazebo reference="odom_link">
-    <gravity>true</gravity>
-    <sensor name="imu_sensor" type="imu">
-      <always_on>true</always_on>
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <topic>__default_topic__</topic>
-      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>imu</topicName>
-        <bodyName>odom_link</bodyName>
-        <updateRateHZ>10.0</updateRateHZ>
-        <gaussianNoise>0.0</gaussianNoise>
-        <xyzOffset>0 0 0</xyzOffset>
-        <rpyOffset>0 0 0</rpyOffset>
-        <frameName>odom_link</frameName>
-      </plugin>
-      <pose>0 0 0 0 0 0</pose>
-    </sensor>
   </gazebo>
-
   
   <!-- Hukuyo Laser Plugin -->
-  <!-- <gazebo reference="laser">
+  <gazebo reference="laser">
     <sensor type="ray" name="head_hokuyo_sensor"> 
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
-      <update_rate>40</update_rate>
+      <update_rate>20</update_rate>
       <ray>
         <scan>
           <horizontal>

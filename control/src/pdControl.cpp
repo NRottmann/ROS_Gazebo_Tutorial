@@ -3,7 +3,7 @@
 #include "geometry_msgs/Twist.h"
 #include "nav_msgs/Odometry.h"
 
-#define PI 3.14159265f
+#define PI 3.14159265
 
 // Define a callback class
 class PDListener
@@ -13,8 +13,8 @@ class PDListener
 		PDListener(ros::NodeHandle nh, ros::NodeHandle nhp);						// this is the constructor
 	private:
 		// Parameters
-		float Pv, Pw, Dv, Dw;
-		float v0, w0;
+    double Pv, Pw, Dv, Dw;
+    double v0, w0;
 		// Position counter
 		int pos;
 		// Subscriber
@@ -25,7 +25,7 @@ class PDListener
 PDListener::PDListener(ros::NodeHandle nh, ros::NodeHandle nhp) {
 	// Get Parameters
 	if (!nhp.getParam("Pv", Pv)) ROS_ERROR("pdControl: Could not find Pv parameter!");
-	ROS_INFO("pdControl: Loaded Parameter\n Pv: %f", Pv);
+  ROS_INFO("pdControl: Loaded Parameter\n Pv: %f", Pv);
 	if (!nhp.getParam("Pw", Pw)) ROS_ERROR("pdControl: Could not find Pw parameter!");
 	ROS_INFO("pdControl: Loaded Parameter\n Pw: %f", Pw);
 	if (!nhp.getParam("Dv", Dv)) ROS_ERROR("pdControl: Could not find Dv parameter!");
@@ -50,12 +50,12 @@ void PDListener::callback(const nav_msgs::Odometry::ConstPtr& msg_in)
 	nav_msgs::Odometry msg_pose = *msg_in;
 	
 	// Positions to visit
-	float xT[20] = { 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0,  6.0,  5.0,  4.0,  3.0,  3.0,  4.0,  4.0,  3.0,  2.0,  1.0,  0.0, -1.0, -1.0};
-	float yT[20] = { 0.0, 0.0, 1.0, 1.0, 2.0, 1.0, 0.0, -1.0, -2.0, -1.0, -2.0, -3.0, -4.0, -5.0, -6.0, -5.0, -4.0, -3.0, -2.0, -1.0};
+  double xT[20] = { 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0,  6.0,  5.0,  4.0,  3.0,  3.0,  4.0,  4.0,  3.0,  2.0,  1.0,  0.0, -1.0, -1.0};
+  double yT[20] = { 0.0, 0.0, 1.0, 1.0, 2.0, 1.0, 0.0, -1.0, -2.0, -1.0, -2.0, -3.0, -4.0, -5.0, -6.0, -5.0, -4.0, -3.0, -2.0, -1.0};
 
 	// Check whether we are already near enough the desired position
-	float ds = (xT[pos] - msg_pose.pose.pose.position.x)*(xT[pos] - msg_pose.pose.pose.position.x) + (yT[pos] - msg_pose.pose.pose.position.y)*(yT[pos] - msg_pose.pose.pose.position.y);
-	if (ds < 0.3) {
+  double ds = (xT[pos] - msg_pose.pose.pose.position.x)*(xT[pos] - msg_pose.pose.pose.position.x) + (yT[pos] - msg_pose.pose.pose.position.y)*(yT[pos] - msg_pose.pose.pose.position.y);
+  if (ds < 0.3) {
 		if (pos == 19) {
 			pos = 0;
 		}
@@ -72,19 +72,19 @@ void PDListener::callback(const nav_msgs::Odometry::ConstPtr& msg_in)
 	double phi = std::atan2(siny_cosp,cosy_cosp);
 	
 	// Calculate Motor Commands, TODO: add D-part
-	float e_x = xT[pos] - msg_pose.pose.pose.position.x;
-	float e_y = yT[pos] - msg_pose.pose.pose.position.y;
-	float u1 = Pv * (cosf(phi) * e_x + sinf(phi) * e_y);
+  double e_x = xT[pos] - msg_pose.pose.pose.position.x;
+  double e_y = yT[pos] - msg_pose.pose.pose.position.y;
+  double u1 = Pv * (cos(phi) * e_x + sin(phi) * e_y);
 
-	float phi_des = atan2f(e_y, e_x);
+  double phi_des = atan2(e_y, e_x);
 	if (phi > PI)
 		phi = phi - 2 * PI;
-	float dphi = phi_des - phi;
+  double dphi = phi_des - phi;
 	if (dphi < -PI)
 		dphi = 2*PI + dphi;
 	if (dphi > PI)
 		dphi = dphi - 2 * PI;
-	float u2 = Pw * dphi;
+  double u2 = Pw * dphi;
 	
 	// Allocate motor control to message
 	geometry_msgs::Twist msg_control;
@@ -111,7 +111,7 @@ void PDListener::callback(const nav_msgs::Odometry::ConstPtr& msg_in)
 int main(int argc, char **argv)
 {
   // Initialize the ROS System
-  ros::init(argc, argv, "decawaveControl");
+  ros::init(argc, argv, "pdControl");
   // Initialize node handle
   ros::NodeHandle nh;
   ros::NodeHandle nhp("~");

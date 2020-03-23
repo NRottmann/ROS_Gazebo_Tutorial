@@ -10,6 +10,8 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
 )
 
+find_package(Eigen3 REQUIRED)
+
 catkin_package(
    CATKIN_DEPENDS 
      roscpp 

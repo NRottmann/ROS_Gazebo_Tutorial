@@ -32,9 +32,6 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
-add_library(odometry_plugin SHARED src/odometry_plugin.cpp)
-target_link_libraries(odometry_plugin ${GAZEBO_LIBRARIES})
-
 # Gazebo set flags
 list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
