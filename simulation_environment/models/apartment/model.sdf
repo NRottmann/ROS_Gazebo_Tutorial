@@ -1,21 +1,23 @@
 <?xml version='1.0'?>
+
 <sdf version='1.6'>
   <model name='walls'>
     <pose frame=''>0.070483 0.106017 0 0 -0 0</pose>
+    
     <link name='Wall_19'>
       <collision name='Wall_19_Collision'>
         <geometry>
           <box>
-            <size>1.9 0.05 1</size>
+            <size>1.9 0.05 2.0</size>
           </box>
         </geometry>
-        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <pose frame=''>0 0 1.0 0 -0 0</pose>
       </collision>
       <visual name='Wall_19_Visual'>
-        <pose frame=''>0 0 0.5 0 -0 0</pose>
+        <pose frame=''>0 0 1.0 0 -0 0</pose>
         <geometry>
           <box>
-            <size>1.9 0.05 1</size>
+            <size>1.9 0.05 2.0</size>
           </box>
         </geometry>
         <material>
@@ -447,3 +449,4 @@
     <static>1</static>
   </model>
 </sdf>
+

@@ -139,7 +139,7 @@
   </joint>
   
   <!-- Add a Hokuyo Laser -->
-  <link name="laser">
+  <link name="laser_link">
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -164,7 +164,38 @@
     <axis xyz="0 1 0" />
     <origin xyz="0 0 ${z_chassis/2 + z_hokuyo/2}" rpy="0 0 0"/>
     <parent link="base_link"/>
-    <child link="laser"/>
+    <child link="laser_link"/>
+  </joint>
+  
+  <!-- Add the camera link -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_size} ${camera_size} ${camera_size}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_size} ${camera_size} ${camera_size}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 ${z_hokuyo/2 + camera_size/2}" rpy="0 0 0"/>
+    <parent link="laser_link"/>
+    <child link="camera_link"/>
   </joint>
 
  </robot>

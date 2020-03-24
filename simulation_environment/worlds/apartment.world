@@ -28,7 +28,7 @@
     <!-- Human -->
     <include>
 		<uri>model://test_human</uri>
-		<pose>1 1 0 0 0 0</pose>
+		<pose>-2.5 4.75 0 0 1.57 -0.8</pose>
     </include> 	  
     
     <!-- Set up the solver used for simulation -->  
