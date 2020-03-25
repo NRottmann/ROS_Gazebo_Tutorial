@@ -1,0 +1,7 @@
+<launch>
+
+  <include file="$(find simulation_environment)/launch/apartment.launch"/>
+
+  <include file="$(find pal_person_detector_opencv)/launch/detector.launch"/>
+
+</launch>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="max_rate"  default="5"/>
+  <arg name="scale"     default="0.5"/>
+  <arg name="image"     default="/xtion/rgb/image_raw"/>
+
+  <node name="person_detector" pkg="pal_person_detector_opencv" type="pal_person_detector_opencv" output="screen">
+    <remap from="image" to="$(arg image)"/>
+    <param name="rate"  value="$(arg max_rate)"/>
+    <param name="scale" value="$(arg scale)"/>
+  </node>
+
+</launch>
