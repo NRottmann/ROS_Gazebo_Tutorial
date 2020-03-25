@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(localization)
+project(commander)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -31,6 +31,6 @@ include_directories(
 )
 
 
-add_executable(kalman_filter src/kalman_filter.cpp)
-target_link_libraries(kalman_filter ${catkin_LIBRARIES})
-add_dependencies(kalman_filter ${catkin_EXPORTED_TARGETS})
+add_executable(example_node_kalman_filter src/example_node_kalman_filter.cpp)
+target_link_libraries(example_node_kalman_filter ${catkin_LIBRARIES})
+add_dependencies(example_node_kalman_filter ${catkin_EXPORTED_TARGETS})

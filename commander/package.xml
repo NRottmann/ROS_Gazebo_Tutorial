@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>control</name>
+  <name>commander</name>
   <version>0.0.0</version>
-  <description>Control package for the simulation environment</description>
+  <description>commander package for the simulation environment</description>
 
   <maintainer email="Nils.Rottmann@rob.uni-luebeck.de">sanu</maintainer>
 

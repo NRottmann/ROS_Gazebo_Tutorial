@@ -34,7 +34,7 @@
   </gazebo>
   
   <!-- Hukuyo Laser Plugin -->
-  <gazebo reference="laser">
+  <gazebo reference="laser_link">
     <sensor type="ray" name="head_hokuyo_sensor"> 
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
@@ -64,7 +64,7 @@
         <frameName>/laser</frameName>
       </plugin>
     </sensor>
-  </gazebo> -->
+  </gazebo>
   
   <!-- RGB Camera Plugin -->
   <gazebo reference="camera_link">
