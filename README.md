@@ -73,7 +73,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
   ```
 
 2. Find the Person in the Building (the robot will start at a random position outside the building)
-  * Create a ROS Node which subscribes to the pose information from the amcl package (Particle Filter) and searches for the missing person by publishing to the /cmd_vel topic. The robot should stop if it found the missing person. For localization you can upload your generated map (example: ocalization.launch)
+  * Create a ROS Node which subscribes to the pose information from the amcl package (Particle Filter) and searches for the missing person by publishing to the /cmd_vel topic. The robot should stop if it found the missing person. For localization you can upload your generated map (example: localization.launch)
   * By running the person_detector (example: detection.launch), a new topic /person_detector will appear which publishes the message pal_person_detector_opencv/Detections2d. This message contains information about detected person in the camera image. For more information about the person detector, we refer to the [ros wiki](http://wiki.ros.org/Robots/TIAGo/Tutorials/PersonDetection). For simplicity, we included the required parts of the pal repository into our tutorial repository.
 
 

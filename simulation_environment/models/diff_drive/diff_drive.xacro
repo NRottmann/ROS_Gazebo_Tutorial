@@ -9,8 +9,17 @@
   <xacro:include filename="$(find simulation_environment)/models/diff_drive/macros.xacro"      />
   <xacro:include filename="$(find simulation_environment)/models/diff_drive/parameter.xacro"   />
 
-  <!-- Define the chassis of the differential drive robot, which is our base -->
+ <!-- Create a dummy link as base link -->
   <link name='base_link'>
+    <pose>0 0 0 0 0 0</pose>
+  </link>
+  <joint type="fixed" name="base_link_to_chassis">
+    <child link="chassis_link"/>
+    <parent link="base_link"/>
+  </joint>
+
+  <!-- Define the chassis of the differential drive robot, which is our base -->
+  <link name='chassis_link'>
     <pose>0 0 0 0 0 0</pose>
     <!-- Define inertial system for the chassis -->
     <inertial>
