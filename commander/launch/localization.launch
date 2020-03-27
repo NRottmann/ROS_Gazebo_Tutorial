@@ -2,7 +2,7 @@
 
   <include file="$(find simulation_environment)/launch/apartment.launch"/>
 
-  <arg name="map_file" default="$(find localization)/maps/mymap.yaml"/>
+  <arg name="map_file" default="$(find commander)/maps/LarsMap.yaml"/>
 
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
 
