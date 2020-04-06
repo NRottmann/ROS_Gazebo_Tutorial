@@ -12,7 +12,7 @@
       <rightJoint>right_wheel_hinge</rightJoint>
       <wheelSeparation>${L_wheel*2}</wheelSeparation>
       <wheelDiameter>${r_wheel*2}</wheelDiameter>
-      <torque>20</torque>
+      <wheelTorque>${torque_wheel}</wheelTorque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom_link</odometryFrame>

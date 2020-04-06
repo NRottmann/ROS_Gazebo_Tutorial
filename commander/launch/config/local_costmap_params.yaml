@@ -1,0 +1,11 @@
+local_costmap:
+  update_frequency: 5
+  publish_frequency: 5
+  transform_tolerance: 1
+  width: 6
+  height: 6
+  origin_x: -3
+  origin_y: -3
+  static_map: false
+  rolling_window: true
+  resolution: 0.1

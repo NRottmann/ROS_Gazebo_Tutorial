@@ -27,6 +27,18 @@ sudo apt-get install ros-melodic-map-server
 ```bash
 sudo apt-get install ros-melodic-amcl
 ```
+* [move_base](http://wiki.ros.org/move_base)
+```bash
+sudo apt-get install ros-melodic-move-base
+```
+* [global_planner](http://wiki.ros.org/global_planner)
+```bash
+sudo apt-get install ros-melodic-global-planner
+```
+* [teb_local_planner](http://wiki.ros.org/teb_local_planner)
+```bash
+sudo apt-get install ros-melodic-teb-local-planner
+```
 
 ## How to:
 * Start by creating a catkin workspace folder, downloading the git repository and compiling the code
@@ -73,7 +85,10 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
   ```
 
 2. Find the Person in the Building (the robot will start at a random position outside the building)
-  * Create a ROS Node which subscribes to the pose information from the amcl package (Particle Filter) and searches for the missing person by publishing to the /cmd_vel topic. The robot should stop if it found the missing person. For localization you can upload your generated map (example: localization.launch)
-  * By running the person_detector (example: detection.launch), a new topic /person_detector will appear which publishes the message pal_person_detector_opencv/Detections2d. This message contains information about detected person in the camera image. For more information about the person detector, we refer to the [ros wiki](http://wiki.ros.org/Robots/TIAGo/Tutorials/PersonDetection). For simplicity, we included the required parts of the pal repository into our tutorial repository.
+  * Create a ROS Node which enables the robot to search in the apartment environment for the missing person (The person will be somewhere placed). After finding the missing person, mark the position of the missing person using visualization_msgs::Marker which can be displayed in rviz. The topic has to be name missing_person. An example on how to do such a visualization message can be found [here](http://wiki.ros.org/rviz/Tutorials/Markers%3A%20Points%20and%20Lines).
+  * For localization, you can use the amcl (Particle Filter) package (example: localization.launch)
+  * For the navigation, you can use move_base, together with local and global path planner (example: navigation.launch). The navigation requires of course localization provided by tthe amcl package.
+  * For moving the robot around, you can publish poses to the robot to the topic /move_base_simple/goal. The move_base package will do thee planning (if correctly configured) using a global and a local path planner.
+  * The missing person can be detected by using the person_detector (example: detection.launch). A new topic /person_detector will appear which publishes the message pal_person_detector_opencv/Detections2d. This message contains information about detected person in the camera image. For more information about the person detector, we refer to the [ros wiki](http://wiki.ros.org/Robots/TIAGo/Tutorials/PersonDetection). For simplicity, we included the required parts of the pal repository into our tutorial repository.
 
 
