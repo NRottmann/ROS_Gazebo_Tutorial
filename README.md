@@ -93,7 +93,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 ### Submission
 
-* Please fork the repository to your own GitHub profile. Then edit your forked repository such that the assignment is full filled. Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_01 with simply the link to your forked GitHub repository.
+* Please fork the repository to your own GitHub profile, duplicate it and set the duplicate to private. Add me, NRottmann, as a contributor such that I can donwload it later. Then start editing your duplicat repository such that the assignment is full filled. Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_01 with simply the link to your forked GitHub repository.
 * Optional (if you do not have an own GitHub Account): Check out a new branch and solve the assignment in this branch. Afterwards, push the branch to this repository.  Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_01 with simply the name of the pushed branch.
 * Add instructions for installation and usage of your repository below under the headline Participant Instructions.
 
