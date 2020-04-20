@@ -91,4 +91,21 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
   * For moving the robot around, you can publish poses to the robot to the topic /move_base_simple/goal. The move_base package will do thee planning (if correctly configured) using a global and a local path planner.
   * The missing person can be detected by using the person_detector (example: detection.launch). A new topic /person_detector will appear which publishes the message pal_person_detector_opencv/Detections2d. This message contains information about detected person in the camera image. For more information about the person detector, we refer to the [ros wiki](http://wiki.ros.org/Robots/TIAGo/Tutorials/PersonDetection). For simplicity, we included the required parts of the pal repository into our tutorial repository.
 
+### Submission
+
+* Please fork the repository to your own GitHub profile, duplicate it and set the duplicate to private. Add me, NRottmann, as a contributor such that I can donwload it later. Then start editing your duplicat repository such that the assignment is full filled. Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_01 with simply the link to your forked GitHub repository.
+* Optional (if you do not have an own GitHub Account): Check out a new branch and solve the assignment in this branch. Afterwards, push the branch to this repository.  Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_01 with simply the name of the pushed branch.
+* Add instructions for installation and usage of your repository below under the headline Participant Instructions.
+
+### Remarks
+
+* There are a lot of good manuals on how ROS and Gazebo work, besides the provided video tutorials.
+* The [ROS wiki](http://wiki.ros.org/) is quite extensive and provides good explanations for all here used packages.
+* If you have a questions with regard to ROS or Gazebo, remember: You are probably not the first one who asked this. Thus, a simple google search might already solve your problem.
+* There are a lot of good communities which provide excellent help with regard to ROS and Gazebo, e.g. Q&A at the ROS wiki, Q&A at the Gazebo wiki, stackoverflow, etc. Do not hesitate to ask your own question but first check whether there exists already a similar thread.
+* Finally, if you tried the above and you still have an unanswered question, then feel free to ask us via Mail, Nils.Rottmann (at) rob.uni-luebeck.de
+
+## Participant Instructions
+
+...
 
