@@ -1,6 +1,6 @@
-obstacle_range: 3.5
-raytrace_range: 4.0
-max_obstacle_height: 1.0
+obstacle_range: 10
+raytrace_range: 10
+max_obstacle_height: 2.0
 inf_is_valid: true
 footprint: [[0.01, 0.01], [-0.01, 0.01], [-0.01, -0.01], [0.01, -0.01]]
 

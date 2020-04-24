@@ -4,8 +4,8 @@ global_costmap:
   transform_tolerance: 1
   width: 40
   height: 40
-  origin_x: -20
-  origin_y: -20
-  static_map: false
+  origin_x: 0
+  origin_y: 0
+  static_map: true
   rolling_window: true
   resolution: 0.1
