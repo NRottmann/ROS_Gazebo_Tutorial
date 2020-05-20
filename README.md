@@ -72,7 +72,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 * Subsrcibed
   * /cmd_vel		(geoemtry_msgs/Twist)
 
-## Assignment:
+## Assignment 01:
 1. Generate a Map of the Environment
   * Start the simulation environment and gampping (hint: have a look into the mapping.launch file)
   * Drive the robot around using the teleop_twist_keyboard until you the map is sufficient accurate (hint: you can have a look onto the map by using rviz)
@@ -109,3 +109,39 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 ...
 
+
+
+## Assignment 02:
+
+In this assignment, you have to let the robot automatically detect two fire sources. Therefore, the robot has a temperature sensor on board which publishes to the 
+
+```
+/temperature (sensor_msgs/Temperature)
+```
+
+topic. For running the scenario enter
+
+```
+roslaunch simulation_environment temperature.launch
+```
+
+The scenario is a free world scenario, thus with only a ground plane and no other boundaries at all. This enables fast simulations. To successfully complete the assignment, you have to:
+
+* let the robot autonomously find both fire sources
+
+* after finding each fire source, publish a self-designed message consisting of  the ROS messages
+
+  * sensor_msgs/Temeperature
+  * geometry_msgs/Pose
+
+  to give out the fire source location together with the temperature
+
+### Submission
+
+* Please fork the repository to your own GitHub profile, duplicate it and set the duplicate to private. Add me, NRottmann, as a contributor such that I can donwload it later. Then start editing your duplicat repository such that the assignment is full filled. Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_02 with simply the link to your forked GitHub repository. 
+* Optional (if you do not have an own GitHub Account): Check out a new branch and solve the assignment in this branch. Afterwards, push the branch to this repository.  Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_02 with simply the name of the pushed branch.
+* Add instructions for installation and usage of your repository below under the headline Participant Instructions.
+
+## Participant Instructions
+
+...
