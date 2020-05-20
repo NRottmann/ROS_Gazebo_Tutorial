@@ -32,6 +32,21 @@
       <updateRate>20.0</updateRate>
     </plugin>
   </gazebo>
+
+  <!-- GPS Plugin -->
+  <gazebo>
+    <plugin name="gps_plugin" filename="libhector_gazebo_ros_gps.so">
+      <alwaysOn>1</alwaysOn>
+      <updateRate>10.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>test</topicName>
+      <velocityTopicName>fix_velocity</velocityTopicName>
+      <drift>5.0 5.0 5.0</drift>
+      <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
+      <velocityDrift>0 0 0</velocityDrift>
+      <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
+    </plugin>
+  </gazebo>
   
   <!-- Hukuyo Laser Plugin -->
   <gazebo reference="laser_link">
@@ -102,6 +117,11 @@
         <distortionT2>0.0</distortionT2>
       </plugin>
     </sensor>
+  </gazebo>
+  
+  <!-- Temperature Sensor -->
+  <gazebo>
+	  <plugin name="temp_plugin" filename="libtemp_plugin.so"/>
   </gazebo>
   
   <!-- Paint the robot -->

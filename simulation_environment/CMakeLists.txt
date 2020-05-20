@@ -32,6 +32,10 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
+# Gazebo Plugins
+add_library(temp_plugin SHARED src/temp_plugin.cpp)
+target_link_libraries(temp_plugin ${GAZEBO_LIBRARIES})
+add_dependencies(temp_plugin ${catkin_EXPORTED_TARGETS})
+
 # Gazebo set flags
 list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
-

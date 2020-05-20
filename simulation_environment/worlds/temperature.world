@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.5">
+  <!-- We use a custom world for the robot so that the camera angle is launched correctly -->
+  <world name="diff_drive_world">
+    
+    <!-- Add a ground plane -->
+    <include>
+        <uri>model://ground_plane</uri>
+        <material>
+            <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+        </material>
+    </include>
+    
+    <!-- Global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include> 	  
+    
+    <!-- Set up the solver used for simulation -->  
+    <physics name="ode_70iters" type="ode">
+      <real_time_update_rate>1500</real_time_update_rate>
+      <ode>
+        <solver>
+          <type>quick</type>
+          <iters>70</iters>
+        </solver>
+      </ode>
+    </physics>
+
+  </world>
+</sdf>
