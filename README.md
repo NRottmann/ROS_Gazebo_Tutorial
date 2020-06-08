@@ -3,7 +3,8 @@ This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a si
 * IMU
 * Odometer
 * LiDAR
-* Camera </br>
+* Camera
+
 Check out the video tutorials [here](https://www.youtube.com/watch?list=PLlcq6PMeufrApLSWZR73ivGDjTxayA_Ss&v=brDKAweq_IM&feature=emb_title) for getting a detailed introduction into ROS and Gazebo.
 
 ## Requirements
