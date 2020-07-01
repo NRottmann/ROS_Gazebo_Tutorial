@@ -3,18 +3,18 @@ This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a si
 
 ## Table of Contents  
 [Requirements](#requirements) <br/>
-[Additional Required Packages](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/Example-Applications) <br/>
-[Get Started](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/ROS-Nodes) <br/>
-[Important Topics](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/Technical-Evaluation) <br/>
-[Assignment 01](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/How-to-contribute%3F) <br/>
-[Assignment 02](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/FAQ) <br/>
+[Additional Required Packages](#packages) <br/>
+[Get Started](#getstarted) <br/>
+[Important Topics](#topics) <br/>
+[Assignment 01](#assignment01) <br/>
+[Assignment 02](#assignment02) <br/>
 
 ## Requirements <a name="requirements"></a>
 * ROS Kinetic (Ubuntu 16.04) or Melodic (Ubuntu 18.04), Installation Instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * Gazebo (recommended: Version 7.0), comes with the ROS full desktop version, otherwise Installation Instructions can be found [here](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=7.0)
 * (optional) ROS-QTC-Plugin for using QT Creator as IDE, Installation Instructions can be found [here](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/Improve-ROS-Qt-Creator-Plugin-Developers-ONLY.html)
 
-## Additional Required Packages (installation instructions are given for ROS Melodic)
+## Additional Required Packages (installation instructions are given for ROS Melodic) <a name="packages"></a>
 * [gmapping](http://wiki.ros.org/gmapping)
 ```bash
 sudo apt-get install ros-melodic-gmapping
@@ -44,7 +44,7 @@ sudo apt-get install ros-melodic-global-planner
 sudo apt-get install ros-melodic-teb-local-planner
 ```
 
-## Get Started
+## Get Started <a name="getstarted"></a>
 * Start by creating a catkin workspace folder, downloading the git repository and compiling the code
 ```bash
 mkdir -p ~/tutorial_ws/src
@@ -67,7 +67,7 @@ roslaunch simulation_environment apartment.launch
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 
-## Important Topics (Message Types) provided by the Simulation Environment
+## Important Topics (Message Types) provided by the Simulation Environment <a name="topics"></a>
 * Published
   * /camera/image_raw 	(sensor_msgs/Image)
   * /imu		(sensor_msgs/Imu)
@@ -76,7 +76,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 * Subsrcibed
   * /cmd_vel		(geoemtry_msgs/Twist)
 
-## Assignment 01:
+## Assignment 01: <a name="assignment01"></a>
 1. Generate a Map of the Environment
   * Start the simulation environment and gampping (hint: have a look into the mapping.launch file)
   * Drive the robot around using the teleop_twist_keyboard until you the map is sufficient accurate (hint: you can have a look onto the map by using rviz)
@@ -115,7 +115,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 
 
 
-## Assignment 02:
+## Assignment 02: <a name="assignment02"></a>
 
 In this assignment, you have to let the robot automatically detect two fire sources. Therefore, the robot has a temperature sensor on board which publishes to the 
 
