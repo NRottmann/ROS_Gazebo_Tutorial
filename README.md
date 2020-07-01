@@ -1,13 +1,15 @@
 # Tutorial for ROS and Gazebo
-This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a simulated differential drive robot equipped with
-* IMU
-* Odometer
-* LiDAR
-* Camera
+This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a simulated differential drive robot equipped with different sensors, such as an IMU, an Odometer, a LiDAR or a Camera. Check out the video tutorials [here](https://www.youtube.com/watch?list=PLlcq6PMeufrApLSWZR73ivGDjTxayA_Ss&v=brDKAweq_IM&feature=emb_title) for getting a detailed introduction into ROS and Gazebo.
 
-Check out the video tutorials [here](https://www.youtube.com/watch?list=PLlcq6PMeufrApLSWZR73ivGDjTxayA_Ss&v=brDKAweq_IM&feature=emb_title) for getting a detailed introduction into ROS and Gazebo.
+## Table of Contents  
+[Requirements](#requirements) <br/>
+[Additional Required Packages](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/Example-Applications) <br/>
+[Get Started](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/ROS-Nodes) <br/>
+[Important Topics](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/Technical-Evaluation) <br/>
+[Assignment 01](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/How-to-contribute%3F) <br/>
+[Assignment 02](https://github.com/ROS-Mobile/ROS-Mobile-Android/wiki/FAQ) <br/>
 
-## Requirements
+## Requirements <a name="requirements"></a>
 * ROS Kinetic (Ubuntu 16.04) or Melodic (Ubuntu 18.04), Installation Instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu)
 * Gazebo (recommended: Version 7.0), comes with the ROS full desktop version, otherwise Installation Instructions can be found [here](http://gazebosim.org/tutorials?tut=install_ubuntu&ver=7.0)
 * (optional) ROS-QTC-Plugin for using QT Creator as IDE, Installation Instructions can be found [here](https://ros-qtc-plugin.readthedocs.io/en/latest/_source/Improve-ROS-Qt-Creator-Plugin-Developers-ONLY.html)
@@ -42,7 +44,7 @@ sudo apt-get install ros-melodic-global-planner
 sudo apt-get install ros-melodic-teb-local-planner
 ```
 
-## How to:
+## Get Started
 * Start by creating a catkin workspace folder, downloading the git repository and compiling the code
 ```bash
 mkdir -p ~/tutorial_ws/src
@@ -107,7 +109,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 * There are a lot of good communities which provide excellent help with regard to ROS and Gazebo, e.g. Q&A at the ROS wiki, Q&A at the Gazebo wiki, stackoverflow, etc. Do not hesitate to ask your own question but first check whether there exists already a similar thread.
 * Finally, if you tried the above and you still have an unanswered question, then feel free to ask us via Mail, Nils.Rottmann (at) rob.uni-luebeck.de
 
-## Participant Instructions
+### Participant Instructions
 
 ...
 
@@ -144,6 +146,6 @@ The scenario is a free world scenario, thus with only a ground plane and no othe
 * Optional (if you do not have an own GitHub Account): Check out a new branch and solve the assignment in this branch. Afterwards, push the branch to this repository.  Finally, send an email to Nils.Rottmann (at) rob.uni-luebeck.de with the concern Rescue_Assignment_02 with simply the name of the pushed branch.
 * Add instructions for installation and usage of your repository below under the headline Participant Instructions.
 
-## Participant Instructions
+### Participant Instructions
 
 ...
