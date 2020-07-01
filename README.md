@@ -1,10 +1,12 @@
 # Tutorial for ROS and Gazebo
-This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a simulated differential drive robot equipped with different sensors, such as an IMU, an Odometer, a LiDAR or a Camera. Check out the video tutorials [here](https://www.youtube.com/watch?list=PLlcq6PMeufrApLSWZR73ivGDjTxayA_Ss&v=brDKAweq_IM&feature=emb_title) for getting a detailed introduction into ROS and Gazebo.
+This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a simulated differential drive robot equipped with different sensors, such as an IMU, an Odometer, a LiDAR or a Camera. Check out the video tutorials for getting a detailed introduction into ROS and Gazebo.
+
 
 ## Table of Contents  
 [Requirements](#requirements) <br/>
 [Additional Required Packages](#packages) <br/>
 [Get Started](#getstarted) <br/>
+[Video Tutorials](#video) <br/>
 [Important Topics](#topics) <br/>
 [Assignment 01](#assignment01) <br/>
 [Assignment 02](#assignment02) <br/>
@@ -67,6 +69,9 @@ roslaunch simulation_environment apartment.launch
 ```bash
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
+
+## Video Tutorials <a name="video"></a>
+[![Video Tutorials](https://www.youtube.com/watch?list=PLlcq6PMeufrApLSWZR73ivGDjTxayA_Ss&v=brDKAweq_IM&feature=emb_logo)
 
 ## Important Topics (Message Types) provided by the Simulation Environment <a name="topics"></a>
 * Published
