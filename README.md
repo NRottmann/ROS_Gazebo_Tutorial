@@ -71,7 +71,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 
 ## Video Tutorials <a name="video"></a>
-[![Video Tutorials](https://www.youtube.com/embed/brDKAweq_IM)
+[![Introduction Video](http://img.youtube.com/vi/brDKAweq_IM/0.jpg)](http://www.youtube.com/watch?v=brDKAweq_IM&list=PLlcq6PMeufrApLSWZR73ivGDjTxayA_Ss)
 
 ## Important Topics (Message Types) provided by the Simulation Environment <a name="topics"></a>
 * Published
