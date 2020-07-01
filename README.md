@@ -8,6 +8,7 @@ This is the code basis for ROS and Gazebo Tutorials and Assignments. We use a si
 [Important Topics](#topics) <br/>
 [Assignment 01](#assignment01) <br/>
 [Assignment 02](#assignment02) <br/>
+[Performance Improvements for Virtual Machines](#improvement) <br/>
 
 ## Requirements <a name="requirements"></a>
 * ROS Kinetic (Ubuntu 16.04) or Melodic (Ubuntu 18.04), Installation Instructions can be found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu)
@@ -149,3 +150,16 @@ The scenario is a free world scenario, thus with only a ground plane and no othe
 ### Participant Instructions
 
 ...
+
+
+## Performance Improvements for Virtual Machines <a name="improvement"></a>
+
+If you are using a virtual machine to run Ubuntu 18.04, you might suffer from bad performance. Don't worry, there are multiple options to increase the performance of your VM:
+
+* If you have HDD and SSD hard disks, then make sure your VM is stored on the SSD.
+* Make sure to allocate enough RAM to the VM. If your PC has 8GB you can allocate 4GB to the VM.
+* Install the guest additions in VirtualBox. With that better graphics driver can be used.
+* Increase the video memory of the VM.
+* Use a better graphic processor if you are running VirtualBox on a notebook.
+* Allocate more CPU cores to the VM.
+* Enable 3D acceleration.
