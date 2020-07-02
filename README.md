@@ -101,6 +101,9 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
   * For the navigation, you can use move_base, together with local and global path planner (example: navigation.launch). The navigation requires of course localization provided by tthe amcl package.
   * For moving the robot around, you can publish poses to the robot to the topic /move_base_simple/goal. The move_base package will do thee planning (if correctly configured) using a global and a local path planner.
   * The missing person can be detected by using the person_detector (example: detection.launch). A new topic /person_detector will appear which publishes the message pal_person_detector_opencv/Detections2d. This message contains information about detected person in the camera image. For more information about the person detector, we refer to the [ros wiki](http://wiki.ros.org/Robots/TIAGo/Tutorials/PersonDetection). For simplicity, we included the required parts of the pal repository into our tutorial repository.
+  
+#### Hint
+You can either design an autonomous search for the robot or pre-define points for navigation (based on your map) to search all rooms.
 
 ### Submission
 
