@@ -148,7 +148,10 @@ The scenario is a free world scenario, thus with only a ground plane and no othe
   * sensor_msgs/Temeperature
   * geometry_msgs/Pose
 
-  to give out the fire source location together with the temperature
+  to give out the fire source location together with the temperature.
+  
+#### Hint
+For getting the pose of the robot you can simply subscribe to the odometry topic (it is published without failure, thus exact).
 
 ### Submission
 
